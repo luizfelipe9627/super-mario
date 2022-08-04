@@ -1,0 +1,61 @@
+/* Responsável pela animação de movimentação do cano verde. */
+@keyframes pipe-animation {
+  /* Começa da direção da direita -80px para evitar que mostre no fim da tela e sim fora dela. */
+  from {
+    right: -80px;
+  } 
+  /* Percorre 100% da tela da direção direita a partir dos -80px. */
+  to {
+    right: 100%;
+  }
+}
+
+/* Responsável pela animação de movimentação das nuvens. */
+@keyframes clouds-animation {
+  /* Começa da direção da direita -500px para evitar que mostre no fim da tela e sim fora dela. */
+  from {
+    right: -500px;
+  }
+  /* Percorre 100% da tela da direção direita a partir dos -500px. */
+  to {
+    right: 100%;
+  }
+}
+
+/* Responsável pela movimentação do pulo do Mario */
+@keyframes mario-animation {
+  /* Começa no chão. */
+  0% {
+    bottom: 0;
+  }
+
+  /* Vai começar se afastar do chão pouco a pouco. */
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  70% {
+    bottom: 180px;
+  }
+
+  /* Quando ele concluir o pulo ele vai voltar para o chão, fazendo todo o processo ao contrario. */
+  100% {
+    bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  @keyframes clouds-animation {
+    from {
+      right: -400px;
+    }
+    to {
+      right: 100%;
+    }
+  }
+}

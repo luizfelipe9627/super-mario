@@ -1,0 +1,44 @@
+.game {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#87CEEB, #E0F6FF);
+  border-bottom: 80px solid rgb(24, 174, 24);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.clouds-gamer {
+  width: 350px;
+  top: 20px;
+  position: absolute;
+  /* Usado para fazer as nuvens se mexerem infinitamente tendo duração de 20 segundos e o linear para ele continuar seguindo sem parar ou diminuir a velocidade. */
+  animation: clouds-animation 20s infinite linear;
+}
+
+.super-mario {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Não está criado no HTML, vai ser acessado e modificado via Javascript. */
+.jump-mario {
+  /* Usado para fazer o mario pular a cada 500 metros por segundo e quando chegar no final dar um leve delay. */
+  animation: mario-animation 500ms ease-out;
+}
+
+.pipe-game {
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  /* Usado para fazer o cano verde se mexer infinitamente tendo duração de 2 segundos e o linear para ele continuar seguindo sem parar ou diminuir a velocidade. */
+  animation: pipe-animation 2s infinite linear;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .pipe-game {
+    animation: pipe-animation 1.5s infinite linear;
+  }
+}
