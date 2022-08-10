@@ -7,3 +7,25 @@
 body {
   overflow: hidden;
 }
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #87CEEB;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  font-weight: bold;
+}

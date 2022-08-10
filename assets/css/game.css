@@ -48,21 +48,9 @@
 .tela-inicial {
   width: 100%;
   height: 100%;
-  background-image: url('https://p4.wallpaperbetter.com/wallpaper/445/899/628/mario-earth-jump-space-wallpaper-preview.jpg');
+  background-image: url('../images/tela-inicial.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  position: absolute;
-  z-index: 999;
-}
-
-.tela-final {
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://i.scdn.co/image/ab67616d0000b273ccb7730680297da990ce7ede');
-  background-repeat: no-repeat;
-
   background-position: center;
   position: absolute;
   z-index: 999;
@@ -81,18 +69,6 @@
   display: none;
 }
 
-button {
-  width: 200px;
-  height: 50px;
-  font-size: 30px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-button:hover {
-  font-weight: bold;
-}
-
 .nome-jogo {
   width: 40%;
 }
@@ -104,9 +80,8 @@ button:hover {
   color: #FFF;
 }
 
-p {
+.created {
   position: absolute;
-  font-weight: bold;
   font-size: 20px;
   bottom: 10px;
   right: 10px;
@@ -114,9 +89,19 @@ p {
   color: #FFF;
 }
 
+
 @media (min-width: 320px) and (max-width: 768px) {
   .pipe-game {
     animation: pipe-animation 1.5s infinite linear;
+  }
+
+  .nome-jogo {
+    width: 90%;
+  }
+
+  .frase-inicio {
+    margin-top: -70px;
+    text-align: center;
   }
 }
 
