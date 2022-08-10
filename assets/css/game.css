@@ -4,13 +4,12 @@
   background: linear-gradient(#87CEEB, #E0F6FF);
   border-bottom: 80px solid rgb(24, 174, 24);
   margin: 0 auto;
-  position: relative;
   overflow: hidden;
 }
 
 .clouds-gamer {
-  width: 350px;
-  top: 20px;
+  width: 400px;
+  top: 30px;
   position: absolute;
   /* Usado para fazer as nuvens se mexerem infinitamente tendo duração de 20 segundos e o linear para ele continuar seguindo sem parar ou diminuir a velocidade. */
   animation: clouds-animation 20s infinite linear;
@@ -25,16 +24,94 @@
 
 /* Não está criado no HTML, vai ser acessado e modificado via Javascript. */
 .jump-mario {
-  /* Usado para fazer o mario pular a cada 500 metros por segundo e quando chegar no final dar um leve delay. */
+  /* Usado para fazer o Mario pular a cada 500 metros por segundo e quando chegar no final do pulo ele vai dar um leve delay. */
   animation: mario-animation 500ms ease-out;
 }
 
 .pipe-game {
-  width: 80px;
+  width: 65px;
   position: absolute;
   bottom: 0;
   /* Usado para fazer o cano verde se mexer infinitamente tendo duração de 2 segundos e o linear para ele continuar seguindo sem parar ou diminuir a velocidade. */
   animation: pipe-animation 2s infinite linear;
+}
+
+.score, .aviso-paragrafo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 2;
+  font-size: 22px;
+}
+
+.tela-inicial {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/445/899/628/mario-earth-jump-space-wallpaper-preview.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  z-index: 999;
+}
+
+.tela-final {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.scdn.co/image/ab67616d0000b273ccb7730680297da990ce7ede');
+  background-repeat: no-repeat;
+
+  background-position: center;
+  position: absolute;
+  z-index: 999;
+}
+
+.fundo-preto {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.imagens, .score {
+  display: none;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  font-weight: bold;
+}
+
+.nome-jogo {
+  width: 40%;
+}
+
+.frase-inicio {
+  animation: pisca-pisca 1.5s linear infinite;
+  font-size: 30px;
+  margin-top: -100px;
+  color: #FFF;
+}
+
+p {
+  position: absolute;
+  font-weight: bold;
+  font-size: 20px;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  color: #FFF;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -42,3 +119,4 @@
     animation: pipe-animation 1.5s infinite linear;
   }
 }
+

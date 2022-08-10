@@ -4,19 +4,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/cogumelo.png" type="image/x-icon">
     <title>Super Mario</title>
   </head>
 
   <body>
     <div class="game">
-      <img src="./assets/images/clouds-gamer.png" class="clouds-gamer" alt="Nuvens">
+      <div class="tela-inicial">
+        <div class="fundo-preto">
+          <img src="./assets/images/nome-jogo.png" alt="" class="nome-jogo">
+          <span class="frase-inicio">Aperte qualquer tecla ou clique para iniciar</span>
+          <p>Criado por <a href="https://www.linkedin.com/in/luizfelipe9627" target="_blank" title="Linkedin">Luiz Felipe</a></p>
+        </div>
+      </div>
       
-      <img src="./assets/images/super-mario.gif" class="super-mario" alt="Mario">
-
-      <img src="./assets/images/pipe-game.png" class="pipe-game" alt="Cano verde">
+      <div class="imagens">
+        <img src="./assets/images/clouds-gamer.png" class="clouds-gamer" alt="Nuvens">
+        <img src="./assets/images/super-mario.gif" class="super-mario" alt="Mario">
+        <img src="./assets/images/pipe-game.png" class="pipe-game" alt="Cano verde">
+      </div>
+      
+      <div class="score">
+        <span class='score-span'></span>
+      </div>
     </div>
+
     
-    <script src="./assets/js/script.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

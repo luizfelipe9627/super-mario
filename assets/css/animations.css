@@ -1,3 +1,15 @@
+@keyframes pisca-pisca {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Responsável pela animação de movimentação do cano verde. */
 @keyframes pipe-animation {
   /* Começa da direção da direita -80px para evitar que mostre no fim da tela e sim fora dela. */
