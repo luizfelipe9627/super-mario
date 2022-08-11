@@ -36,12 +36,13 @@
   animation: pipe-animation 2s infinite linear;
 }
 
-.score, .aviso-paragrafo {
+.score {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  z-index: 2;
+  position: relative;
+  z-index: 100;
   font-size: 22px;
 }
 

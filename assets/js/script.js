@@ -14,18 +14,23 @@ let imagensGame = document.querySelector('.imagens');
 
 let scoreDiv = document.querySelector('.score');
 
+let audioFundo = document.querySelector('.fundo');
 
-function iniciarGame() {
+let audioGameOver = document.querySelector('.game-over');
+
+let audioInicio = document.querySelector('.inicio');
+
+telaInicial.addEventListener('click', () => {
   gameDiv.style.position = 'relative';
   telaInicial.style.display = 'none';
   imagensGame.style.display = 'flex';
   scoreDiv.style.display = 'flex';
-}
-
-document.addEventListener('keydown', iniciarGame)
-document.addEventListener('click', iniciarGame)
-
-// Está criando uma letante chamada marioJump em seguida atribuindo a ela uma função com arrow function sem um parâmetro.
+  
+  audioInicio.pause();
+  audioFundo.play();
+})
+  
+// Está criando uma variável chamada marioJump em seguida atribuindo a ela uma função com arrow function sem um parâmetro.
 let marioJump = () => {
   // Está selecionando o Mario e usando o Classlist para adicionar uma propriedade na classe do Mario no caso adicionando a classe jump-mario.
   // Tem o mesmo resultado do que usar o querySelector.
@@ -49,9 +54,8 @@ let loopGame = setInterval(() => {
     .getComputedStyle(mario)
     // Irá pegar a propriedade Bottom do Mario e limpar.
     .bottom.replace('px', '');
-
   scoreSpan.innerHTML = `Score ➞ ${pipePosition}`;
-  
+
   // Se a posição do Pipe for maior ou menor que 120 e maior que 0 e a posição do Mario for menor que 60 ele vai executar o bloco de comandos.
   if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 60) {
     // Está removendo a Animation do estilo do Pipe. Obrigando ele a parar.
@@ -77,6 +81,9 @@ let loopGame = setInterval(() => {
     // Está alterando no estilo do Mario o marginLeft dele.
     mario.style.marginLeft = '55px';
 
+    audioFundo.pause();
+    audioGameOver.play();
+
     // Usado para limpar o intervalo, assim fazendo ele não executar mais.
     clearInterval(loopGame);
 
@@ -87,7 +94,7 @@ let loopGame = setInterval(() => {
 
       setTimeout(() => {
         location.reload()
-      }, 5000);
+      }, 6000);
     }
     
     fimGame();
