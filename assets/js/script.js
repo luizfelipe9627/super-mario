@@ -1,32 +1,42 @@
+// Está selecionando a classe responsável pelo Tela inicial do game.
+let telaInicial = document.querySelector('.tela-inicial');
+
+// Está selecionando o audio de fundo da tela inicial.
+let audioInicio = document.querySelector('.inicio');
+
+// Está selecionando o audio de fundo quando inicia o game.
+let audioFundo = document.querySelector('.fundo');
+
+// Está selecionando o audio de game over quando perde.
+let audioGameOver = document.querySelector('.game-over');
+
+// Está selecionando a div pai de todos os elementos.
+let game = document.querySelector('.game');
+
+// Está selecionando a classe imagens que contem todas as imagens do game.
+let imagens = document.querySelector('.imagens');
+
 // Está selecionando a classe responsável pelo Mario.
 let mario = document.querySelector('.super-mario');
 
 // Está selecionando a classe responsável pelo Cano verde.
 let pipe = document.querySelector('.pipe-game');
 
-let telaInicial = document.querySelector('.tela-inicial');
+// Está selecionando a imagem das nuvens.
+let clouds = document.querySelector('.clouds-gamer');
 
-let gameDiv = document.querySelector('.game');
-
-let scoreSpan = document.querySelector('.score-span');
-
-let imagensGame = document.querySelector('.imagens');
-
-let scoreDiv = document.querySelector('.score');
-
-let audioFundo = document.querySelector('.fundo');
-
-let audioGameOver = document.querySelector('.game-over');
-
-let audioInicio = document.querySelector('.inicio');
-
+// Responsável por aplicar um evento de clique ao clicar na tela inicial.
 telaInicial.addEventListener('click', () => {
-  gameDiv.style.position = 'relative';
+  // Irá fazer o game aparecer.
+  game.style.position = 'relative';
+  // Irá fazer a tela inicial sumir.
   telaInicial.style.display = 'none';
-  imagensGame.style.display = 'flex';
-  scoreDiv.style.display = 'flex';
-  
+  // Irá fazer todas as imagens do jogo aparecer.
+  imagens.style.display = 'flex';
+
+  // Irá pausar a música de fundo da tela inicial.
   audioInicio.pause();
+  // Irá iniciar a música de fundo do game.
   audioFundo.play();
 })
   
@@ -54,7 +64,6 @@ let loopGame = setInterval(() => {
     .getComputedStyle(mario)
     // Irá pegar a propriedade Bottom do Mario e limpar.
     .bottom.replace('px', '');
-  scoreSpan.innerHTML = `Score ➞ ${pipePosition}`;
 
   // Se a posição do Pipe for maior ou menor que 120 e maior que 0 e a posição do Mario for menor que 60 ele vai executar o bloco de comandos.
   if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 60) {
@@ -81,22 +90,24 @@ let loopGame = setInterval(() => {
     // Está alterando no estilo do Mario o marginLeft dele.
     mario.style.marginLeft = '55px';
 
+    // Irá pausar o audio de fundo.
     audioFundo.pause();
+    // Irá iniciar o audio de game over.
     audioGameOver.play();
 
     // Usado para limpar o intervalo, assim fazendo ele não executar mais.
     clearInterval(loopGame);
 
+    // Função fimGame declarada sendo responsável por fazer a página recarregar.
     function fimGame() {
-      scoreDiv.innerHTML = `Seu score final foi de ➞ ${pipePosition}`;
-      scoreDiv.style.fontSize = '50px';
-      scoreDiv.style.marginTop = '40vh';
-
+      // Irá executar uma ação depois de 5 segundos.
       setTimeout(() => {
+        // Responsável por recarregar a página.
         location.reload()
-      }, 6000);
+      }, 5000);
     }
-    
+
+    // Está invocando a função fimGame.
     fimGame();
   }
 }, 10);
