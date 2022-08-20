@@ -49,6 +49,9 @@
   }
 }
 
+/* 
+  Usado para responsividade de eixo horizontal, no caso quando o dispositivo está deitado e não em pé.
+*/
 @media (orientation: landscape) {
   .created {
     display: none;

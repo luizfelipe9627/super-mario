@@ -40,7 +40,6 @@
   display: none;
 }
 
-
 @media (min-width: 320px) and (max-width: 768px) {
   .pipe-game {
     animation: pipe-animation 1.5s infinite linear;
