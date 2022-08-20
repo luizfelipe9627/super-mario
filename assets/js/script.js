@@ -82,7 +82,7 @@ let loopGame = setInterval(() => {
     mario.style.bottom = `${marioPosition}px`;
 
     // Está trocando a imagem do Mario quando houver colisão.
-    mario.src = "./assets/images/mario-game-over.png";
+    mario.src = "./assets/image/mario-game-over.png";
 
     // Está alterando no estilo do Mario o Width dele.
     mario.style.width = '60px';
