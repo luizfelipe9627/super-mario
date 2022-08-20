@@ -30,15 +30,6 @@
   color: #FFF;
 }
 
-.created {
-  position: absolute;
-  font-size: 20px;
-  bottom: 10px;
-  right: 10px;
-  z-index: 99;
-  color: #FFF;
-}
-
 @media (min-width: 320px) and (max-width: 768px) {
   .nome-jogo {
     width: 90%;
@@ -46,14 +37,5 @@
 
   .frase-inicio {
     text-align: center;
-  }
-}
-
-/* 
-  Usado para responsividade de eixo horizontal, no caso quando o dispositivo está deitado e não em pé.
-*/
-@media (orientation: landscape) {
-  .created {
-    display: none;
   }
 }
